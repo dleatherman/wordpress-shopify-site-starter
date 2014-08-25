@@ -1,0 +1,6 @@
+[submodule "www/wp-content/themes/audicus/lib/timber"]
+  path = www/wp-content/themes/audicus/lib/timber
+  url = https://github.com/jarednova/timber.git
+[submodule "www/wp-content/themes/audicus/lib/cmb"]
+  path = www/wp-content/themes/audicus/lib/cmb
+  url = https://github.com/humanmade/Custom-Meta-Boxes.git

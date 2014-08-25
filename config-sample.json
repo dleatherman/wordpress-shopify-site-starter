@@ -1,0 +1,10 @@
+{
+  "db_name": "app",
+  "username": "root",
+  "password": "root",
+  "site_url": "http://localhost:8888",
+  "host": "localhost",
+  "shopify_url": "shop.myshopify.com",
+  "shopify_api_key": "",
+  "shopify_api_password": ""
+}

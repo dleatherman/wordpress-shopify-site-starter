@@ -1,0 +1,15 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "chosen": "https://github.com/ChrisSoutham/bootstrap-chosen-less-js/archive/v1.1.0.zip",
+    "isotope": "https://github.com/metafizzy/isotope/archive/v2.0.0.zip"
+  }
+}
