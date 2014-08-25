@@ -14,9 +14,6 @@ assets/img/chosen/
 assets/fonts/bootstrap/
 
 shop/assets
-www/wp-content/themes/theme/css/
-www/wp-content/themes/theme/js/
-www/wp-content/themes/theme/img/
-www/wp-content/themes/theme/fonts/
+www/wp-content/themes/theme/*
 
 config.json
