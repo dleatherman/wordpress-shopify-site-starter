@@ -8,7 +8,7 @@
 2. Install Timber's dependencies and move back to project root - `cd www/wp-content/themes/theme/lib/timber && composer install && cd ../../../../../../`
 3. Install all node packages - `npm install`
 4. Install all front-end dependencies from bower, compile & concatenate javascripts and less, and copy files to shop folder - `grunt setup`
-5. To download WordPress files (if needed) run `git clone https://github.com/WordPress/WordPress.git; cd WordPress/; git checkout tags/3.9.1; cd ../; cp -nr WordPress/* www/; rm -rf WordPress/`. You will also need to set up a database and hook wordpress up to it by editing `www/wp-config.php`.
+5. To download WordPress files (if needed) run `git clone https://github.com/WordPress/WordPress.git; cd WordPress/; git checkout tags/4.0; cd ../; cp -nr WordPress/* www/; rm -rf WordPress/`. You will also need to set up a database and hook wordpress up to it by editing `www/wp-config.php`.
 
 ## Development
 
@@ -19,9 +19,11 @@ Run `grunt copy` to copy all the needed css and js files from the `www/` directo
 
 - `grunt bowercopy` - Downloads front-end deps using bower, copies them to their respective folders, then removes `bower_components/`
 - `grunt copy` - Copies javascript, css, images, and fonts from the `assets/` folder to the WordPress theme folder in `www/` and `shop/`
-- `grunt less` - Compiles less to css
 - `grunt jshint` - Lints javascript source files
 - `grunt uglify` - Concatenates and minifies javascript
+- `grunt less` - Compiles less to css
+- `grunt shopify` - Pushes the theme to shopify via command line
+- `grunt shopify_theme_settings` - Updates the `shop/config/settings.html` from the `settings/*` folder
 - `grunt watch`  - Polls for changes in files to run `less` `jshint` and `uglify` as well as `copy` tasks, runs a live reload server
 - `grunt build` -  Runs `uglify:site` followed by `less:production`
 - `grunt setup` -  Runs `bowercopy` followed by `build` and `copy`

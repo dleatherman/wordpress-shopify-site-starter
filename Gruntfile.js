@@ -4,24 +4,6 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     local_config: grunt.file.readJSON('config.json'),
 
-    shopify: {
-      options: {
-        api_key: '<%= local_config.shopify_api_key %>',
-        password: '<%= local_config.shopify_api_password %>',
-        url: '<%= local_config.shopify_url %>',
-        base: 'shop/'
-      }
-    },
-
-    shopify_theme_settings: {
-      settings: {
-        options: {},
-        files: {
-          'shop/config/settings.html': 'settings/*.yml'
-        }
-      }
-    },
-
     bowercopy: {
       options: {
         clean: true
@@ -50,15 +32,6 @@ module.exports = function(grunt) {
       isotope: {
         files: {
           'assets/js/lib/jquery.isotope.min.js': 'isotope/jquery.isotope.min.js'
-        }
-      }
-    },
-
-    connect: {
-      server: {
-        options: {
-          base: 'www',
-          livereload: true
         }
       }
     },
@@ -185,6 +158,24 @@ module.exports = function(grunt) {
         },
         files: {
           'assets/css/style.css': 'assets/css/less/style.less'
+        }
+      }
+    },
+
+    shopify: {
+      options: {
+        api_key: '<%= local_config.shopify_api_key %>',
+        password: '<%= local_config.shopify_api_password %>',
+        url: '<%= local_config.shopify_url %>',
+        base: 'shop/'
+      }
+    },
+
+    shopify_theme_settings: {
+      settings: {
+        options: {},
+        files: {
+          'shop/config/settings.html': 'settings/*.yml'
         }
       }
     },
