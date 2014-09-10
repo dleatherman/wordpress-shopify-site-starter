@@ -13,6 +13,15 @@ module.exports = function(grunt) {
       }
     },
 
+    shopify_theme_settings: {
+      settings: {
+        options: {},
+        files: {
+          'shop/config/settings.html': 'settings/*.yml'
+        }
+      }
+    },
+
     bowercopy: {
       options: {
         clean: true
@@ -67,7 +76,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             src: 'assets/css/style.css',
-            dest: '<%= pkg.themeFolder %>/',
+            dest: '<%= pkg.themeFolder %>/assets/',
             flatten: true,
             filter: 'isFile'
           }
@@ -85,7 +94,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             src: 'assets/js/dist/app.min.js',
-            dest: '<%= pkg.themeFolder %>/',
+            dest: '<%= pkg.themeFolder %>/assets/',
             flatten: true,
             filter: 'isFile'
           }
@@ -103,7 +112,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             src: 'assets/fonts/**/*',
-            dest: '<%= pkg.themeFolder %>/',
+            dest: '<%= pkg.themeFolder %>/assets/',
             flatten: true,
             filter: 'isFile'
           }
@@ -121,7 +130,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             src: 'assets/img/**/*',
-            dest: '<%= pkg.themeFolder %>/',
+            dest: '<%= pkg.themeFolder %>/assets/',
             flatten: true,
             filter: 'isFile'
           }
@@ -167,7 +176,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    
+
     less: {
       production: {
         options: {
@@ -214,37 +223,41 @@ module.exports = function(grunt) {
         files: ['shop/**'],
         tasks: ['shopify']
       },
+      shopify_settings: {
+        files: ['settings/**'],
+        tasks: ['shopify_theme_settings']
+      },
       options: {
         livereload: true,
       }
     },
 
     db_dump: {
-      "local": {
-        "options": {
-          "title": "Local DB",
-          "database": "<%= local_config.db_name %>",
-          "user": "<%= local_config.username %>",
-          "pass": "<%= local_config.password %>",
-          "host": "<%= local_config.host %>",
-          "site_url": "<%= local_config.site_url %>",
-          "backup_to": "db/local.sql",
-          "port": "8889"
+      'local': {
+        'options': {
+          'title': 'Local DB',
+          'database': '<%= local_config.db_name %>',
+          'user': '<%= local_config.username %>',
+          'pass': '<%= local_config.password %>',
+          'host': '<%= local_config.host %>',
+          'site_url': '<%= local_config.site_url %>',
+          'backup_to': 'db/local.sql',
+          'port': '8889'
         }
       },
     },
 
     db_import: {
-      "local": {
-        "options": {
-          "title": "Local DB",
-          "database": "<%= local_config.db_name %>",
-          "user": "<%= local_config.username %>",
-          "pass": "<%= local_config.password %>",
-          "host": "<%= local_config.host %>",
-          "site_url": "<%= local_config.site_url %>",
-          "backup_to": "db/local.sql",
-          "port": "8889"
+      'local': {
+        'options': {
+          'title': 'Local DB',
+          'database': '<%= local_config.db_name %>',
+          'user': '<%= local_config.username %>',
+          'pass': '<%= local_config.password %>',
+          'host': '<%= local_config.host %>',
+          'site_url': '<%= local_config.site_url %>',
+          'backup_to': 'db/local.sql',
+          'port': '8889'
         }
       }
     }

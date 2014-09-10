@@ -1,0 +1,13 @@
+---
+Global:
+
+  Site Settings and Options:
+    notitle: true
+
+    Site Heading:
+      name: site_heading
+      type: text-single
+
+    Site Tagline:
+      name: site_subheading
+      type: text-multi
