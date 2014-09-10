@@ -266,5 +266,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', ['uglify:site', 'less:production']);
   grunt.registerTask('setup', ['bowercopy', 'build', 'copy']);
-  grunt.registerTask('default', ['connect', 'watch']);
+  grunt.registerTask('default', ['watch']);
 }
