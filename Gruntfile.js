@@ -278,7 +278,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-mysql-dump-import');
 
-  grunt.registerTask('build', ['uglify:site', 'less:production']);
+  grunt.registerTask('build', ['uglify:site', 'less:production', 'cssmin']);
   grunt.registerTask('setup', ['bowercopy', 'build', 'copy']);
   grunt.registerTask('default', ['watch']);
 }
