@@ -41,14 +41,14 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            src: 'assets/css/style.css',
+            src: 'assets/css/style.min.css',
             dest: 'shop/assets/',
             flatten: true,
             filter: 'isFile'
           },
           {
             expand: true,
-            src: 'assets/css/style.css',
+            src: 'assets/css/style.min.css',
             dest: '<%= pkg.themeFolder %>/assets/',
             flatten: true,
             filter: 'isFile'
@@ -162,6 +162,19 @@ module.exports = function(grunt) {
       }
     },
 
+    cssmin: {
+      combine: {
+        options: {
+          banner : '/*\nProject started with The Wordpress/Shopify starter theme by Dan Leatherman (@danleatherman). \n*/',
+          keepSpecialComments: 0,
+          report: 'gzip'
+        },
+        files: {
+          'assets/css/style.min.css': ['assets/css/style.css']
+        }
+      }
+    },
+
     shopify: {
       options: {
         api_key: '<%= local_config.shopify_api_key %>',
@@ -200,7 +213,7 @@ module.exports = function(grunt) {
       },
       less: {
         files: ['assets/css/less/**/*.less'],
-        tasks: ['less:production', 'copy:css']
+        tasks: ['less:production', 'cssmin', 'copy:css']
       },
       uglify: {
         files: ['assets/js/src/*.js', 'assets/js/lib/*.js'],
